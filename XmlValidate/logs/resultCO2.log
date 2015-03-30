@@ -1,0 +1,26 @@
+START==============================================================================
+Start processing at Thu Dec 18 12:30:51 EST 2014
+START validation of folder/file: ./files/ with XSD schema: ./files/CustomerOrders.xsd and write result to output CSV file: ./output/resultCO2.csv
+Create schema validator using XSD file: ./files/CustomerOrders.xsd
+Created validator: com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorImpl@2bd1232
+Try to create result file: ./output/resultCO2.csv
+Validate folder or file: C:\Users\wum2\Downloads\XmlValidate\.\files
+Path C:\Users\wum2\Downloads\XmlValidate\.\files is a folder
+Found 4 files inside folder:  C:\Users\wum2\Downloads\XmlValidate\.\files
+Validate folder or file: C:\Users\wum2\Downloads\XmlValidate\.\files\books.xml
+Path C:\Users\wum2\Downloads\XmlValidate\.\files\books.xml is a file
+C:\Users\wum2\Downloads\XmlValidate\.\files\books.xml is NOT valid
+Reason: cvc-elt.1: Cannot find the declaration of element 'x:books'.
+Validate folder or file: C:\Users\wum2\Downloads\XmlValidate\.\files\CustomerOrders.xml
+Path C:\Users\wum2\Downloads\XmlValidate\.\files\CustomerOrders.xml is a file
+C:\Users\wum2\Downloads\XmlValidate\.\files\CustomerOrders.xml is valid
+Validate folder or file: C:\Users\wum2\Downloads\XmlValidate\.\files\Policy_0001.xml
+Path C:\Users\wum2\Downloads\XmlValidate\.\files\Policy_0001.xml is a file
+C:\Users\wum2\Downloads\XmlValidate\.\files\Policy_0001.xml is NOT valid
+Reason: The markup in the document preceding the root element must be well-formed.
+Validate folder or file: C:\Users\wum2\Downloads\XmlValidate\.\files\PurchaseOrder.xml
+Path C:\Users\wum2\Downloads\XmlValidate\.\files\PurchaseOrder.xml is a file
+C:\Users\wum2\Downloads\XmlValidate\.\files\PurchaseOrder.xml is NOT valid
+Reason: cvc-elt.1: Cannot find the declaration of element 'PurchaseOrder'.
+Validation FINISHED, closing output file
+END==============================================================================

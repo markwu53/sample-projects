@@ -1,0 +1,5 @@
+xsd_file_name,xml_file_name,validate,validate_reason
+"./files/CustomerOrders.xsd","C:\Users\wum2\Downloads\XmlValidate\files\books.xml",false,"SAXException: cvc-elt.1: Cannot find the declaration of element 'x:books'."
+"./files/CustomerOrders.xsd","C:\Users\wum2\Downloads\XmlValidate\files\CustomerOrders.xml",true,"OK"
+"./files/CustomerOrders.xsd","C:\Users\wum2\Downloads\XmlValidate\files\Policy_0001.xml",false,"SAXException: The markup in the document preceding the root element must be well-formed."
+"./files/CustomerOrders.xsd","C:\Users\wum2\Downloads\XmlValidate\files\PurchaseOrder.xml",false,"SAXException: cvc-elt.1: Cannot find the declaration of element 'PurchaseOrder'."

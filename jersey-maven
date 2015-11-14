@@ -1,0 +1,1 @@
+Jersey Maven sample project.

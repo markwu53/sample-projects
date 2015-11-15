@@ -1,0 +1,10 @@
+<!--Sun Nov  8 21:37:04 2015-->
+    <configuration>
+    
+    <property>
+      <name>fs.defaultFS</name>
+      <value>hdfs://sandbox.hortonworks.com:8020</value>
+      <final>true</final>
+    </property>
+  
+  </configuration>

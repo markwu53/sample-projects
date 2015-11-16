@@ -14,10 +14,10 @@ public class PhoenixTest {
         public static void main(String[] args) throws Exception {
                 phoenixConnection = DriverManager.getConnection(url);
                 System.out.println("connected");
-                exSelect();
-                //exDrop();
-                //exCreate();
-                //exInsert();
+                //exSelect();
+                exDrop();
+                exCreate();
+                exInsert();
                 phoenixConnection.close();
                 System.out.println("done");
         }
@@ -61,9 +61,11 @@ public class PhoenixTest {
 
         public static void exInsert() throws Exception {
                 String sql = "upsert into pho_table_2 (rowkey, user.name, user.age) values ('1001', 'Mark Wu', '45')";
+                //String sql = "insert into pho_table_2 (rowkey, user.name, user.age) values ('1001', 'Mark Wu', '45')";
                 PreparedStatement ps = phoenixConnection.prepareStatement(sql);
-                ps.execute();
+                ps.executeUpdate();
                 ps.close();
+                phoenixConnection.commit();
         }
 
 }

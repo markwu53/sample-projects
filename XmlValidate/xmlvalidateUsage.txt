@@ -1,3 +1,0 @@
-java -jar ./build/XmlValjava -jar ./build/XmlValidate.jar ./files/ ./files/PolicyWithNoSeqAndNoAttrib_CovMod.xsd .xml ./output/result.csv ./log/result.log
-
-java -jar ./build/XmlValidate1.jar ./files/ ./files/CustomerOrders.xsd .xml ./output/resultCO.csv ./logs/resultCO.log

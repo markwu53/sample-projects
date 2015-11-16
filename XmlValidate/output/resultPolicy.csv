@@ -1,5 +1,0 @@
-xsd_file_name,xml_file_name,validate,validate_reason
-"./files/PolicyWithNoSeqAndNoAttrib_CovMod.xsd","C:\Users\dahera\workspace\XmlValidate\files\books.xml",false,"SAXException: cvc-elt.1: Cannot find the declaration of element 'x:books'."
-"./files/PolicyWithNoSeqAndNoAttrib_CovMod.xsd","C:\Users\dahera\workspace\XmlValidate\files\CustomerOrders.xml",false,"SAXException: cvc-elt.1: Cannot find the declaration of element 'Root'."
-"./files/PolicyWithNoSeqAndNoAttrib_CovMod.xsd","C:\Users\dahera\workspace\XmlValidate\files\Policy_0001.xml",false,"SAXException: The markup in the document preceding the root element must be well-formed."
-"./files/PolicyWithNoSeqAndNoAttrib_CovMod.xsd","C:\Users\dahera\workspace\XmlValidate\files\PurchaseOrder.xml",false,"SAXException: cvc-elt.1: Cannot find the declaration of element 'PurchaseOrder'."

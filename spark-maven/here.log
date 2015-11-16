@@ -1,0 +1,210 @@
+15/11/10 23:24:20 INFO SparkContext: Running Spark version 1.5.1
+15/11/10 23:24:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/11/10 23:24:21 INFO SecurityManager: Changing view acls to: apple
+15/11/10 23:24:21 INFO SecurityManager: Changing modify acls to: apple
+15/11/10 23:24:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(apple); users with modify permissions: Set(apple)
+15/11/10 23:24:22 INFO Slf4jLogger: Slf4jLogger started
+15/11/10 23:24:22 INFO Remoting: Starting remoting
+15/11/10 23:24:22 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.1.140:64077]
+15/11/10 23:24:22 INFO Utils: Successfully started service 'sparkDriver' on port 64077.
+15/11/10 23:24:22 INFO SparkEnv: Registering MapOutputTracker
+15/11/10 23:24:22 INFO SparkEnv: Registering BlockManagerMaster
+15/11/10 23:24:22 INFO DiskBlockManager: Created local directory at /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/blockmgr-2c833bac-8df4-4bb8-964c-3ac8f22f988b
+15/11/10 23:24:22 INFO MemoryStore: MemoryStore started with capacity 491.7 MB
+15/11/10 23:24:22 INFO HttpFileServer: HTTP File server directory is /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/spark-c78abb31-06ae-4ae7-a491-24d32cbe4a79/httpd-0348d730-7dfb-475b-801c-d8d6f4a2cdd1
+15/11/10 23:24:22 INFO HttpServer: Starting HTTP Server
+15/11/10 23:24:22 INFO Utils: Successfully started service 'HTTP file server' on port 64078.
+15/11/10 23:24:22 INFO SparkEnv: Registering OutputCommitCoordinator
+15/11/10 23:24:23 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/11/10 23:24:23 INFO SparkUI: Started SparkUI at http://192.168.1.140:4040
+15/11/10 23:24:23 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/11/10 23:24:23 INFO Executor: Starting executor ID driver on host localhost
+15/11/10 23:24:23 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 64079.
+15/11/10 23:24:23 INFO NettyBlockTransferService: Server created on 64079
+15/11/10 23:24:23 INFO BlockManagerMaster: Trying to register BlockManager
+15/11/10 23:24:23 INFO BlockManagerMasterEndpoint: Registering block manager localhost:64079 with 491.7 MB RAM, BlockManagerId(driver, localhost, 64079)
+15/11/10 23:24:23 INFO BlockManagerMaster: Registered BlockManager
+15/11/10 23:24:24 INFO MemoryStore: ensureFreeSpace(122752) called with curMem=0, maxMem=515553361
+15/11/10 23:24:24 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 119.9 KB, free 491.6 MB)
+15/11/10 23:24:24 INFO MemoryStore: ensureFreeSpace(13016) called with curMem=122752, maxMem=515553361
+15/11/10 23:24:24 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 12.7 KB, free 491.5 MB)
+15/11/10 23:24:24 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:64079 (size: 12.7 KB, free: 491.7 MB)
+15/11/10 23:24:24 INFO SparkContext: Created broadcast 0 from textFile at SparkTest.java:13
+15/11/10 23:24:24 INFO FileInputFormat: Total input paths to process : 1
+15/11/10 23:24:25 INFO SparkContext: Starting job: foreach at SparkTest.java:19
+15/11/10 23:24:25 INFO DAGScheduler: Got job 0 (foreach at SparkTest.java:19) with 1 output partitions
+15/11/10 23:24:25 INFO DAGScheduler: Final stage: ResultStage 0(foreach at SparkTest.java:19)
+15/11/10 23:24:25 INFO DAGScheduler: Parents of final stage: List()
+15/11/10 23:24:25 INFO DAGScheduler: Missing parents: List()
+15/11/10 23:24:25 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[2] at map at SparkTest.java:14), which has no missing parents
+15/11/10 23:24:25 INFO MemoryStore: ensureFreeSpace(3728) called with curMem=135768, maxMem=515553361
+15/11/10 23:24:25 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.6 KB, free 491.5 MB)
+15/11/10 23:24:25 INFO MemoryStore: ensureFreeSpace(2171) called with curMem=139496, maxMem=515553361
+15/11/10 23:24:25 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.1 KB, free 491.5 MB)
+15/11/10 23:24:25 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:64079 (size: 2.1 KB, free: 491.7 MB)
+15/11/10 23:24:25 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/11/10 23:24:25 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at map at SparkTest.java:14)
+15/11/10 23:24:25 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+15/11/10 23:24:25 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2175 bytes)
+15/11/10 23:24:25 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/11/10 23:24:25 INFO HadoopRDD: Input split: file:/Users/apple/Documents/workspaces/leaflet/spark-maven/pom.xml:0+769
+15/11/10 23:24:25 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+15/11/10 23:24:25 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+15/11/10 23:24:25 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+15/11/10 23:24:25 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+15/11/10 23:24:25 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+15/11/10 23:24:25 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2044 bytes result sent to driver
+15/11/10 23:24:25 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 151 ms on localhost (1/1)
+15/11/10 23:24:25 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/11/10 23:24:25 INFO DAGScheduler: ResultStage 0 (foreach at SparkTest.java:19) finished in 0.169 s
+15/11/10 23:24:25 INFO DAGScheduler: Job 0 finished: foreach at SparkTest.java:19, took 0.316829 s
+15/11/10 23:24:25 INFO SparkUI: Stopped Spark web UI at http://192.168.1.140:4040
+15/11/10 23:24:25 INFO DAGScheduler: Stopping DAGScheduler
+15/11/10 23:24:25 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/11/10 23:24:25 INFO MemoryStore: MemoryStore cleared
+15/11/10 23:24:25 INFO BlockManager: BlockManager stopped
+15/11/10 23:24:25 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/11/10 23:24:25 INFO SparkContext: Successfully stopped SparkContext
+15/11/10 23:24:25 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/11/10 23:24:25 INFO ShutdownHookManager: Shutdown hook called
+15/11/10 23:24:25 INFO ShutdownHookManager: Deleting directory /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/spark-c78abb31-06ae-4ae7-a491-24d32cbe4a79
+15/11/10 23:27:01 INFO SparkContext: Running Spark version 1.5.1
+15/11/10 23:27:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/11/10 23:27:01 INFO SecurityManager: Changing view acls to: apple
+15/11/10 23:27:01 INFO SecurityManager: Changing modify acls to: apple
+15/11/10 23:27:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(apple); users with modify permissions: Set(apple)
+15/11/10 23:27:02 INFO Slf4jLogger: Slf4jLogger started
+15/11/10 23:27:02 INFO Remoting: Starting remoting
+15/11/10 23:27:02 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.1.140:64232]
+15/11/10 23:27:02 INFO Utils: Successfully started service 'sparkDriver' on port 64232.
+15/11/10 23:27:02 INFO SparkEnv: Registering MapOutputTracker
+15/11/10 23:27:02 INFO SparkEnv: Registering BlockManagerMaster
+15/11/10 23:27:02 INFO DiskBlockManager: Created local directory at /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/blockmgr-5366a898-15e9-4598-aaaf-7bd2cae9dd2b
+15/11/10 23:27:02 INFO MemoryStore: MemoryStore started with capacity 491.7 MB
+15/11/10 23:27:02 INFO HttpFileServer: HTTP File server directory is /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/spark-05239ef9-2a0d-476d-bbee-8e67655eb3c6/httpd-37c909b6-2c4e-4a67-9627-0f41c0790427
+15/11/10 23:27:02 INFO HttpServer: Starting HTTP Server
+15/11/10 23:27:03 INFO Utils: Successfully started service 'HTTP file server' on port 64233.
+15/11/10 23:27:03 INFO SparkEnv: Registering OutputCommitCoordinator
+15/11/10 23:27:03 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/11/10 23:27:03 INFO SparkUI: Started SparkUI at http://192.168.1.140:4040
+15/11/10 23:27:03 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/11/10 23:27:03 INFO Executor: Starting executor ID driver on host localhost
+15/11/10 23:27:03 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 64234.
+15/11/10 23:27:03 INFO NettyBlockTransferService: Server created on 64234
+15/11/10 23:27:03 INFO BlockManagerMaster: Trying to register BlockManager
+15/11/10 23:27:03 INFO BlockManagerMasterEndpoint: Registering block manager localhost:64234 with 491.7 MB RAM, BlockManagerId(driver, localhost, 64234)
+15/11/10 23:27:03 INFO BlockManagerMaster: Registered BlockManager
+15/11/10 23:27:04 INFO MemoryStore: ensureFreeSpace(122752) called with curMem=0, maxMem=515553361
+15/11/10 23:27:04 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 119.9 KB, free 491.6 MB)
+15/11/10 23:27:04 INFO MemoryStore: ensureFreeSpace(13016) called with curMem=122752, maxMem=515553361
+15/11/10 23:27:04 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 12.7 KB, free 491.5 MB)
+15/11/10 23:27:04 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:64234 (size: 12.7 KB, free: 491.7 MB)
+15/11/10 23:27:04 INFO SparkContext: Created broadcast 0 from textFile at SparkTest.java:13
+15/11/10 23:27:05 INFO FileInputFormat: Total input paths to process : 1
+15/11/10 23:27:05 INFO SparkContext: Starting job: foreach at SparkTest.java:24
+15/11/10 23:27:05 INFO DAGScheduler: Got job 0 (foreach at SparkTest.java:24) with 1 output partitions
+15/11/10 23:27:05 INFO DAGScheduler: Final stage: ResultStage 0(foreach at SparkTest.java:24)
+15/11/10 23:27:05 INFO DAGScheduler: Parents of final stage: List()
+15/11/10 23:27:05 INFO DAGScheduler: Missing parents: List()
+15/11/10 23:27:05 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at map at SparkTest.java:19), which has no missing parents
+15/11/10 23:27:05 INFO MemoryStore: ensureFreeSpace(4000) called with curMem=135768, maxMem=515553361
+15/11/10 23:27:05 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.9 KB, free 491.5 MB)
+15/11/10 23:27:05 INFO MemoryStore: ensureFreeSpace(2254) called with curMem=139768, maxMem=515553361
+15/11/10 23:27:05 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.2 KB, free 491.5 MB)
+15/11/10 23:27:05 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:64234 (size: 2.2 KB, free: 491.7 MB)
+15/11/10 23:27:05 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/11/10 23:27:05 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at map at SparkTest.java:19)
+15/11/10 23:27:05 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+15/11/10 23:27:05 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2175 bytes)
+15/11/10 23:27:05 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/11/10 23:27:05 INFO HadoopRDD: Input split: file:/Users/apple/Documents/workspaces/leaflet/spark-maven/pom.xml:0+769
+15/11/10 23:27:05 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+15/11/10 23:27:05 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+15/11/10 23:27:05 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+15/11/10 23:27:05 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+15/11/10 23:27:05 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+15/11/10 23:27:05 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2044 bytes result sent to driver
+15/11/10 23:27:05 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 148 ms on localhost (1/1)
+15/11/10 23:27:05 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/11/10 23:27:05 INFO DAGScheduler: ResultStage 0 (foreach at SparkTest.java:24) finished in 0.172 s
+15/11/10 23:27:05 INFO DAGScheduler: Job 0 finished: foreach at SparkTest.java:24, took 0.323335 s
+15/11/10 23:27:05 INFO SparkUI: Stopped Spark web UI at http://192.168.1.140:4040
+15/11/10 23:27:05 INFO DAGScheduler: Stopping DAGScheduler
+15/11/10 23:27:05 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/11/10 23:27:05 INFO MemoryStore: MemoryStore cleared
+15/11/10 23:27:05 INFO BlockManager: BlockManager stopped
+15/11/10 23:27:05 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/11/10 23:27:05 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/11/10 23:27:05 INFO SparkContext: Successfully stopped SparkContext
+15/11/10 23:27:05 INFO ShutdownHookManager: Shutdown hook called
+15/11/10 23:27:05 INFO ShutdownHookManager: Deleting directory /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/spark-05239ef9-2a0d-476d-bbee-8e67655eb3c6
+15/11/15 23:30:46 INFO SparkContext: Running Spark version 1.5.1
+15/11/15 23:30:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/11/15 23:30:46 INFO SecurityManager: Changing view acls to: apple
+15/11/15 23:30:46 INFO SecurityManager: Changing modify acls to: apple
+15/11/15 23:30:46 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(apple); users with modify permissions: Set(apple)
+15/11/15 23:30:47 INFO Slf4jLogger: Slf4jLogger started
+15/11/15 23:30:47 INFO Remoting: Starting remoting
+15/11/15 23:30:47 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.1.140:49277]
+15/11/15 23:30:47 INFO Utils: Successfully started service 'sparkDriver' on port 49277.
+15/11/15 23:30:47 INFO SparkEnv: Registering MapOutputTracker
+15/11/15 23:30:47 INFO SparkEnv: Registering BlockManagerMaster
+15/11/15 23:30:47 INFO DiskBlockManager: Created local directory at /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/blockmgr-50a5b1e2-be03-4758-9afc-da16d7c0819e
+15/11/15 23:30:47 INFO MemoryStore: MemoryStore started with capacity 491.7 MB
+15/11/15 23:30:47 INFO HttpFileServer: HTTP File server directory is /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/spark-5eb9fd9a-d3e1-4e14-885c-d0f48fda1ae1/httpd-005f371f-0a06-4684-9698-5882966d300a
+15/11/15 23:30:47 INFO HttpServer: Starting HTTP Server
+15/11/15 23:30:48 INFO Utils: Successfully started service 'HTTP file server' on port 49278.
+15/11/15 23:30:48 INFO SparkEnv: Registering OutputCommitCoordinator
+15/11/15 23:30:48 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/11/15 23:30:48 INFO SparkUI: Started SparkUI at http://192.168.1.140:4040
+15/11/15 23:30:48 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/11/15 23:30:48 INFO Executor: Starting executor ID driver on host localhost
+15/11/15 23:30:48 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 49279.
+15/11/15 23:30:48 INFO NettyBlockTransferService: Server created on 49279
+15/11/15 23:30:48 INFO BlockManagerMaster: Trying to register BlockManager
+15/11/15 23:30:48 INFO BlockManagerMasterEndpoint: Registering block manager localhost:49279 with 491.7 MB RAM, BlockManagerId(driver, localhost, 49279)
+15/11/15 23:30:48 INFO BlockManagerMaster: Registered BlockManager
+15/11/15 23:30:49 INFO MemoryStore: ensureFreeSpace(122752) called with curMem=0, maxMem=515553361
+15/11/15 23:30:49 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 119.9 KB, free 491.6 MB)
+15/11/15 23:30:49 INFO MemoryStore: ensureFreeSpace(13016) called with curMem=122752, maxMem=515553361
+15/11/15 23:30:49 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 12.7 KB, free 491.5 MB)
+15/11/15 23:30:49 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:49279 (size: 12.7 KB, free: 491.7 MB)
+15/11/15 23:30:49 INFO SparkContext: Created broadcast 0 from textFile at SparkTest.java:13
+15/11/15 23:30:50 INFO FileInputFormat: Total input paths to process : 1
+15/11/15 23:30:50 INFO SparkContext: Starting job: foreach at SparkTest.java:24
+15/11/15 23:30:50 INFO DAGScheduler: Got job 0 (foreach at SparkTest.java:24) with 1 output partitions
+15/11/15 23:30:50 INFO DAGScheduler: Final stage: ResultStage 0(foreach at SparkTest.java:24)
+15/11/15 23:30:50 INFO DAGScheduler: Parents of final stage: List()
+15/11/15 23:30:50 INFO DAGScheduler: Missing parents: List()
+15/11/15 23:30:50 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at map at SparkTest.java:19), which has no missing parents
+15/11/15 23:30:50 INFO MemoryStore: ensureFreeSpace(4000) called with curMem=135768, maxMem=515553361
+15/11/15 23:30:50 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.9 KB, free 491.5 MB)
+15/11/15 23:30:50 INFO MemoryStore: ensureFreeSpace(2254) called with curMem=139768, maxMem=515553361
+15/11/15 23:30:50 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.2 KB, free 491.5 MB)
+15/11/15 23:30:50 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:49279 (size: 2.2 KB, free: 491.7 MB)
+15/11/15 23:30:50 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/11/15 23:30:50 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at map at SparkTest.java:19)
+15/11/15 23:30:50 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+15/11/15 23:30:50 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2175 bytes)
+15/11/15 23:30:50 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/11/15 23:30:50 INFO HadoopRDD: Input split: file:/Users/apple/Documents/workspaces/leaflet/spark-maven/pom.xml:0+769
+15/11/15 23:30:50 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+15/11/15 23:30:50 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+15/11/15 23:30:50 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+15/11/15 23:30:50 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+15/11/15 23:30:50 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+15/11/15 23:30:50 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2044 bytes result sent to driver
+15/11/15 23:30:50 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 143 ms on localhost (1/1)
+15/11/15 23:30:50 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/11/15 23:30:50 INFO DAGScheduler: ResultStage 0 (foreach at SparkTest.java:24) finished in 0.166 s
+15/11/15 23:30:50 INFO DAGScheduler: Job 0 finished: foreach at SparkTest.java:24, took 0.344472 s
+15/11/15 23:30:50 INFO SparkUI: Stopped Spark web UI at http://192.168.1.140:4040
+15/11/15 23:30:50 INFO DAGScheduler: Stopping DAGScheduler
+15/11/15 23:30:50 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/11/15 23:30:50 INFO MemoryStore: MemoryStore cleared
+15/11/15 23:30:50 INFO BlockManager: BlockManager stopped
+15/11/15 23:30:50 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/11/15 23:30:50 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/11/15 23:30:50 INFO SparkContext: Successfully stopped SparkContext
+15/11/15 23:30:50 INFO ShutdownHookManager: Shutdown hook called
+15/11/15 23:30:50 INFO ShutdownHookManager: Deleting directory /private/var/folders/_7/gl3t7qxn7lsdl0593c9092rh0000gn/T/spark-5eb9fd9a-d3e1-4e14-885c-d0f48fda1ae1

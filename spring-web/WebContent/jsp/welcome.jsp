@@ -6,6 +6,7 @@
 <title>Spring MVC</title>
 </head>
 <body>
-    <h1>Welcome</h1>
+    <h1>${greeting }</h1>
+    The following are beans: ${beans }
 </body>
 </html>

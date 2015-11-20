@@ -52,7 +52,8 @@ public class JdbcExample implements Runnable {
                 //DataSource dataSource = appContext.getBean("mysqlWufamilyDataSource", DataSource.class);
                 DataSource dataSource = appContext.getBean("mysqlSandboxDataSource", DataSource.class);
                 JdbcTemplate jdbc = new JdbcTemplate(dataSource);
-                String sql = "select * from tables";
+                //String sql = "select * from tables";
+                String sql = "show schemas";
                 List<String> rows = jdbc.query(sql, new RowMapper<String>() {
                         public String mapRow(ResultSet rs, int rowNum) throws SQLException {
                                 int colCount = rs.getMetaData().getColumnCount();

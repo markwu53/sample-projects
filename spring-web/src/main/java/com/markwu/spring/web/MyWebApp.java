@@ -7,9 +7,6 @@ import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -17,15 +14,15 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration
 @EnableWebMvc
-@ComponentScan("com.markwu.spring.web")
+//@ComponentScan("com.markwu.spring.web")
 public class MyWebApp implements WebApplicationInitializer {
 
         @Override
         public void onStartup(ServletContext container) throws ServletException {
                 AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
                 context.register(MyWebApp.class);
+                context.register(Utils.class, MysqlController.class);
                 container.addListener(new ContextLoaderListener(context));
                 Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(context));
                 dispatcher.setLoadOnStartup(1);
@@ -37,22 +34,7 @@ public class MyWebApp implements WebApplicationInitializer {
                 return new InternalResourceViewResolver();
         }
 
-        @Bean
-        public DataSource mysqlDataSource() {
-                BasicDataSource dataSource = new BasicDataSource();
-                dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-                dataSource.setUrl(ConnectionStrings.MYSQL_SANDBOX);
-                dataSource.setUsername("hive");
-                dataSource.setPassword("hive");
-                return dataSource;
-        }
-
-        @Bean
-        public JdbcTemplate mysqlJdbc() {
-                return new JdbcTemplate(mysqlDataSource());
-        }
-
-        @Bean
+        //@Bean
         public DataSource fiopsDataSource() {
                 BasicDataSource dataSource = new BasicDataSource();
                 dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
@@ -63,11 +45,19 @@ public class MyWebApp implements WebApplicationInitializer {
         }
 
         @Bean
-        public JdbcTemplate fiopsJdbc() {
-                return new JdbcTemplate(fiopsDataSource());
+        public DataSource mysqlDataSource() {
+                BasicDataSource dataSource = new BasicDataSource();
+                dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+                //dataSource.setUrl(ConnectionStrings.MYSQL_SANDBOX);
+                //dataSource.setUsername("hive");
+                //dataSource.setPassword("hive");
+                dataSource.setUrl(ConnectionStrings.MYSQL_WUFAMILY);
+                dataSource.setUsername("dbuser");
+                dataSource.setPassword("12345678");
+                return dataSource;
         }
 
-        @Bean
+        //@Bean
         public DataSource phoenixDataSource() {
                 BasicDataSource dataSource = new BasicDataSource();
                 dataSource.setDriverClassName("org.apache.phoenix.jdbc.PhoenixDriver");
@@ -75,11 +65,6 @@ public class MyWebApp implements WebApplicationInitializer {
                 //dataSource.setUsername("buys");
                 //dataSource.setPassword("dataownr");
                 return dataSource;
-        }
-
-        @Bean
-        public JdbcTemplate phoenixJdbc() {
-                return new JdbcTemplate(phoenixDataSource());
         }
 
 }

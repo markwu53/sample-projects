@@ -14,10 +14,10 @@ public class PhoenixTest {
         public static void main(String[] args) throws Exception {
                 phoenixConnection = DriverManager.getConnection(url);
                 System.out.println("connected");
-                //exSelect();
-                exDrop();
-                exCreate();
-                exInsert();
+                exSelect();
+                //exDrop();
+                //exCreate();
+                //exInsert();
                 phoenixConnection.close();
                 System.out.println("done");
         }

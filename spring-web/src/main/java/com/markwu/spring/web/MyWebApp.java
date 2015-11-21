@@ -20,11 +20,11 @@ public class MyWebApp implements WebApplicationInitializer {
 
         @Override
         public void onStartup(ServletContext container) throws ServletException {
-                AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-                context.register(MyWebApp.class);
-                context.register(Utils.class, MysqlController.class);
-                container.addListener(new ContextLoaderListener(context));
-                Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(context));
+                AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
+                appContext.register(MyWebApp.class);
+                appContext.register(Utils.class, MysqlController.class);
+                container.addListener(new ContextLoaderListener(appContext));
+                Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(appContext));
                 dispatcher.setLoadOnStartup(1);
                 dispatcher.addMapping("/");
         }
@@ -54,16 +54,6 @@ public class MyWebApp implements WebApplicationInitializer {
                 dataSource.setUrl(ConnectionStrings.MYSQL_WUFAMILY);
                 dataSource.setUsername("dbuser");
                 dataSource.setPassword("12345678");
-                return dataSource;
-        }
-
-        //@Bean
-        public DataSource phoenixDataSource() {
-                BasicDataSource dataSource = new BasicDataSource();
-                dataSource.setDriverClassName("org.apache.phoenix.jdbc.PhoenixDriver");
-                dataSource.setUrl(ConnectionStrings.PHOENIX);
-                //dataSource.setUsername("buys");
-                //dataSource.setPassword("dataownr");
                 return dataSource;
         }
 

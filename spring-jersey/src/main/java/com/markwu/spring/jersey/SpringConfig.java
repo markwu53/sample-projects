@@ -4,10 +4,16 @@ import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+@EnableWebMvc
 @Configuration
-public class SpringConfig {
+@ComponentScan("com.markwu.spring.jersey")
+public class SpringConfig extends WebMvcConfigurerAdapter {
 
         @Bean
         public DataSource phoenixDataSource() {
@@ -18,8 +24,8 @@ public class SpringConfig {
         }
 
         @Bean
-        public Utils utils() {
-                return new Utils();
+        public InternalResourceViewResolver viewResolver() {
+                return new InternalResourceViewResolver();
         }
 
 }

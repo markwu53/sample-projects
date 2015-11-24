@@ -1,38 +1,62 @@
 package com.markwu.spring.boot;
 
-import java.io.File;
+import javax.sql.DataSource;
 
-import org.springframework.boot.SpringApplication;
+import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.util.Assert;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
-        //this is for standalone
-        public static void main(String[] args) {
-                new SpringApplication(Application.class).run(args);
-        }
+        @Autowired private ApplicationContext applicationContext;
+        @Value("${activeDatabase:mysql}") private String activeDatabase;
+        @Value("${datasource.error.message:DataSource error}") private String dataSourceErrorMessage;
 
-        //this is for run in tomcat
         @Override
         protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
                 return builder.sources(Application.class);
         }
 
-        //this is for standalone
         @Bean
-        public EmbeddedServletContainerCustomizer servletContainerCustomizer() {
-                return new EmbeddedServletContainerCustomizer() {
-                        public void customize(ConfigurableEmbeddedServletContainer container) {
-                                container.setPort(8086);
-                                container.setDocumentRoot(new File("WebContent"));
-                        }
-                };
+        public DataSource dataSource() {
+                DataSource dataSource = null;
+                if ("hive".equalsIgnoreCase(activeDatabase)) {
+                        dataSource = hiveDataSource();
+                } else if ("mysql".equalsIgnoreCase(activeDatabase)) {
+                        dataSource = mysqlDataSource();
+                }
+                Assert.notNull(dataSource, dataSourceErrorMessage);
+                return dataSource;
+        }
+
+        public DataSource mysqlDataSource() {
+                BasicDataSource dataSource = new BasicDataSource();
+                dataSource.setDriverClassName(applicationContext.getEnvironment().getProperty("mysql.jdbc.driver"));
+                dataSource.setUrl(applicationContext.getEnvironment().getProperty("mysql.jdbc.url"));
+                dataSource.setUsername(applicationContext.getEnvironment().getProperty("mysql.jdbc.username"));
+                dataSource.setPassword(applicationContext.getEnvironment().getProperty("mysql.jdbc.password"));
+                //verify and initialize dataSource
+                new JdbcTemplate(dataSource, false);
+                return dataSource;
+        }
+
+        public DataSource hiveDataSource() {
+                BasicDataSource dataSource = new BasicDataSource();
+                dataSource.setDriverClassName(applicationContext.getEnvironment().getProperty("hive.jdbc.driver"));
+                dataSource.setUrl(applicationContext.getEnvironment().getProperty("hive.jdbc.url"));
+                dataSource.setUsername(applicationContext.getEnvironment().getProperty("hive.jdbc.username"));
+                dataSource.setPassword(applicationContext.getEnvironment().getProperty("hive.jdbc.password"));
+                //verify and initialize dataSource
+                new JdbcTemplate(dataSource, false);
+                return dataSource;
         }
 
 }

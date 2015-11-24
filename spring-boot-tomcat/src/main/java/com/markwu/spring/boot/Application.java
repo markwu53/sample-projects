@@ -22,11 +22,13 @@ public class Application extends SpringBootServletInitializer {
 
         @Override
         protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+                System.out.println("+++++++++++++++++++++Initializing Web App Context++++++++++++++++");
                 return builder.sources(Application.class);
         }
 
         @Bean
         public DataSource dataSource() {
+                System.out.println("+++++++++++++++++++++Initializing data source++++++++++++++++");
                 DataSource dataSource = null;
                 if ("hive".equalsIgnoreCase(activeDatabase)) {
                         dataSource = hiveDataSource();
@@ -38,6 +40,7 @@ public class Application extends SpringBootServletInitializer {
         }
 
         public DataSource mysqlDataSource() {
+                System.out.println("+++++++++++++++++++++Initializing mysql data source++++++++++++++++");
                 BasicDataSource dataSource = new BasicDataSource();
                 dataSource.setDriverClassName(applicationContext.getEnvironment().getProperty("mysql.jdbc.driver"));
                 dataSource.setUrl(applicationContext.getEnvironment().getProperty("mysql.jdbc.url"));
@@ -49,6 +52,7 @@ public class Application extends SpringBootServletInitializer {
         }
 
         public DataSource hiveDataSource() {
+                System.out.println("+++++++++++++++++++++Initializing hive data source++++++++++++++++");
                 BasicDataSource dataSource = new BasicDataSource();
                 dataSource.setDriverClassName(applicationContext.getEnvironment().getProperty("hive.jdbc.driver"));
                 dataSource.setUrl(applicationContext.getEnvironment().getProperty("hive.jdbc.url"));

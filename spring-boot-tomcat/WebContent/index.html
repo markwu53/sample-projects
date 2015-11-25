@@ -18,6 +18,13 @@
 <link rel="stylesheet" href="css/my.css">
 <script src="js/my.js"></script>
 </head>
-<body>
+<body ng-app="myapp" ng-controller="mycontroller">
+    <table class="table table-striped table-bordered table-hover">
+        <tbody>
+            <tr ng-repeat="row in rows">
+                <td ng-repeat="col in row">{{col}}</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

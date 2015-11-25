@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,6 +27,7 @@ public class MyController {
         @Autowired private DataSource dataSource;
 
         @RequestMapping("/drivers")
+        @Produces(MediaType.APPLICATION_JSON)
         public String drivers() {
                 JdbcTemplate jdbc = new JdbcTemplate(dataSource);
                 final List<String> header = new ArrayList<String>();
@@ -45,6 +48,7 @@ public class MyController {
                                 return row;
                         }
                 });
+                System.out.println(rows);
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 JsonObject json = new JsonObject();
                 json.add("header", gson.toJsonTree(header, new TypeToken<List<String>>(){}.getType()));

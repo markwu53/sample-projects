@@ -22,18 +22,20 @@ public class MyJerseyClient {
         public void go() {
                 //exPut();
                 //exDelete();
-                exPost();
+                //exPost();
                 exGet();
         }
   
         public void exGet() {
                 String result = JerseyClientBuilder.createClient()
-                                .target("http://localhost:8080/jersey-maven/rest/user")
+                                //.target("http://localhost:8080/jersey-maven/rest/user")
+                                .target("http://localhost:8080/spring-boot-tomcat/drivers")
                                 .request().accept(MediaType.APPLICATION_JSON)
                                 .get(String.class);
-                List<User> list = gson.fromJson(result, new TypeToken<List<User>>(){}.getType());
-                String json = gson.toJson(list, new TypeToken<List<User>>(){}.getType());
-                System.out.println(json);
+                System.out.println(result);
+                //List<User> list = gson.fromJson(result, new TypeToken<List<User>>(){}.getType());
+                //String json = gson.toJson(list, new TypeToken<List<User>>(){}.getType());
+                //System.out.println(json);
         }
 
         public void exPut() {

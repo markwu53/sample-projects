@@ -31,6 +31,7 @@ create view "leaflet" (
         "trip"."total" varchar
 );
 
+drop table leaflet.trip;
 create table leaflet.trip (
         rowkey varchar not null primary key,
         trip.count varchar,
@@ -39,4 +40,4 @@ create table leaflet.trip (
         trip.total varchar
 );
 
-upsert 
+upsert into leaflet.trip values ('1001', '3', 'New York', '620', 'some information');

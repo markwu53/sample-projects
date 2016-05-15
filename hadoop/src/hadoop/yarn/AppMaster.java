@@ -1,6 +1,13 @@
 package hadoop.yarn;
 
+import java.util.Collections;
+
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.yarn.api.protocolrecords.AllocateResponse;
+import org.apache.hadoop.yarn.api.records.Container;
+import org.apache.hadoop.yarn.api.records.ContainerLaunchContext;
+import org.apache.hadoop.yarn.api.records.ContainerStatus;
+import org.apache.hadoop.yarn.api.records.FinalApplicationStatus;
 import org.apache.hadoop.yarn.api.records.Priority;
 import org.apache.hadoop.yarn.api.records.Resource;
 import org.apache.hadoop.yarn.client.api.AMRMClient;
@@ -37,6 +44,26 @@ public class AppMaster {
             rmClient.addContainerRequest(containerAsk);
         }
 
+        int responseId = 0;
+        int completedContainers = 0;
+        while (completedContainers < n) {
+            AllocateResponse response = rmClient.allocate(responseId++);
+            for (Container container : response.getAllocatedContainers()) {
+                // Launch container by create ContainerLaunchContext
+                ContainerLaunchContext ctx = Records.newRecord(ContainerLaunchContext.class);
+                ctx.setCommands(Collections.singletonList("date"));
+                System.out.println("Launching container " + container.getId());
+                nmClient.startContainer(container, ctx);
+            }
+            for (ContainerStatus status : response.getCompletedContainersStatuses()) {
+                ++completedContainers;
+                System.out.println("Completed container " + status.getContainerId());
+            }
+            Thread.sleep(100);
+        }
+
+        // Un-register with ResourceManager
+        rmClient.unregisterApplicationMaster(FinalApplicationStatus.SUCCEEDED, "", "");
     }
 
 }

@@ -19,6 +19,7 @@ import org.apache.hadoop.yarn.util.Records;
 public class AppMaster {
 
     public static void main(String[] args) throws Exception {
+        //in sandbox
         Configuration conf = new YarnConfiguration();
         AMRMClient<ContainerRequest>rmClient = AMRMClient.createAMRMClient();
         rmClient.init(conf);

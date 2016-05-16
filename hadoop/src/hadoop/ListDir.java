@@ -21,6 +21,7 @@ public class ListDir {
         for (FileStatus file: fs.listStatus(new Path("/user"))) {
             System.out.println(file.getPath().getName());
         }
+        System.out.println("done");
     }
 
 }

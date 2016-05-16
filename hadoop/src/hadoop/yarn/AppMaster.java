@@ -22,6 +22,7 @@ public class AppMaster {
         //in sandbox
         //in windows
         //change in sandbox again
+        //import from clone
         Configuration conf = new YarnConfiguration();
         AMRMClient<ContainerRequest>rmClient = AMRMClient.createAMRMClient();
         rmClient.init(conf);

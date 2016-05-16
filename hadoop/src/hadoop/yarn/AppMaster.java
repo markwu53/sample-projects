@@ -20,6 +20,7 @@ public class AppMaster {
 
     public static void main(String[] args) throws Exception {
         //in sandbox
+        //in windows
         Configuration conf = new YarnConfiguration();
         AMRMClient<ContainerRequest>rmClient = AMRMClient.createAMRMClient();
         rmClient.init(conf);

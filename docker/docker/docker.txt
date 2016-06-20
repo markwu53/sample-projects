@@ -1,0 +1,23 @@
+#mysql
+docker run --name mysql -d -P -e MYSQL_ROOT_PASSWORD=12345678 -v /c/Users/T162880/Documents/Programs/mysql:/var/lib/mysql mysql:latest
+docker exec -it mysql mysql -u root -p
+docker exec -it mysql /bin/bash
+
+#firefox
+docker run -d -e DISPLAY=10.101.7.146:0.0 --name ubuntu-firefox markwu53/ubuntu:firefox firefox
+
+#eclipse
+docker run -d -e DISPLAY=10.101.7.146:0.0 -v /c/Users/T162880/Documents/Programs/workspaces/docker:/root/workspace --name ubuntu-eclipse markwu53/ubuntu:eclipse eclipse
+
+#wordpress
+docker run -d -p 8082:80 --name wordpress --link mysql:mysql -v /c/Users/T162880/Documents/Programs/wordpress/html:/var/www/html -e WORDPRESS_DB_PASSWORD=12345678 wordpress:latest
+docker run -d -p 8082:80 --name wordpress \
+-v /c/Users/T162880/Documents/Programs/wordpress/html:/var/www/html \
+-e WORDPRESS_DB_HOST=172.17.0.2 \
+-e WORDPRESS_DB_USER=root \
+-e WORDPRESS_DB_PASSWORD=12345678 \
+wordpress:latest
+
+#jupyter
+docker run --name notebook -d -P -v /c/Users/T162880/Documents/Programs/python-notebook:/notebooks jupyter/notebook jupyter-notebook
+docker run -it jupyter/notebook /bin/bash

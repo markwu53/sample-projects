@@ -1,0 +1,8 @@
+FROM markwu53/ubuntu:java8
+RUN apt-get update && apt-get install -y wget
+RUN cd ~ \
+        && wget http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/mars/2/eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz \
+        && tar -zxvf eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz \
+        && rm -f eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz \
+        && mv eclipse /usr/local/share \
+        && ln -s /usr/local/share/eclipse/eclipse /usr/bin/eclipse

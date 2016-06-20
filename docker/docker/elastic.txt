@@ -42,4 +42,151 @@ curl -XGET 'http://172.17.0.2:9200/blog/_search?pretty=true' -d '
     } 
 }'
 
+curl -i -XGET 'http://172.17.0.2:9200/_count?pretty' -d '
+{
+    "query": {
+        "match_all": {}
+    }
+}'
 
+curl -XPUT 'http://172.17.0.2:9200/megacorp/employee/1' -d '
+{
+    "first_name" : "John",
+    "last_name" : "Smith",
+    "age" : 25,
+    "about" : "I love to go rock climbing",
+    "interests": [ "sports", "music" ]
+}'
+
+curl -XPUT 'http://172.17.0.2:9200/megacorp/employee/2' -d '
+{
+    "first_name" : "Jane",
+    "last_name" : "Smith",
+    "age" : 32,
+    "about" : "I like to collect rock albums",
+    "interests": [ "music" ]
+}'
+
+curl -XPUT 'http://172.17.0.2:9200/megacorp/employee/3' -d '
+{
+    "first_name" : "Douglas",
+    "last_name" : "Fir",
+    "age" : 35,
+    "about": "I like to build cabinets",
+    "interests": [ "forestry" ]
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/1'
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search'
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search?q=last_name:Smith'
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search?q=last_name:smith'
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search' -d'
+{
+    "query" : {
+        "match" : {
+            "last_name" : "Smith"
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search' -d'
+{
+    "query" : {
+        "filtered" : {
+            "filter" : {
+                "range" : {
+                    "age" : { "gt" : 30 }
+                }
+            },
+            "query" : {
+                "match" : {
+                    "last_name" : "smith"
+                }
+            }
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search' -d'
+{
+    "query" : {
+        "match" : {
+            "about" : "rock climbing"
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search' -d'
+{
+    "query" : {
+        "match_phrase" : {
+            "about" : "rock Climbing"
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search' -d'
+{
+    "query" : {
+        "match_phrase" : {
+            "about" : "rock climbing"
+        }
+    },
+    "highlight": {
+        "fields" : {
+            "about" : {}
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search?pretty=true' -d'
+{
+    "aggs": {
+        "all_interests": {
+            "terms": { "field": "interests" }
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search?pretty=true' -d'
+{
+    "query": {
+        "match": {
+            "last_name": "smith"
+        }
+    },
+    "aggs": {
+        "all_interests": {
+            "terms": {
+                "field": "interests"
+            }
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/megacorp/employee/_search?pretty=true' -d'
+{
+    "aggs" : {
+        "all_interests" : {
+            "terms" : { "field" : "interests" },
+            "aggs" : {
+                "avg_age" : {
+                    "avg" : { "field" : "age" }
+                }
+            }
+        }
+    }
+}'
+
+curl -XGET 'http://172.17.0.2:9200/_cluster/health?pretty=true'
+curl -XGET 'http://172.17.0.2:9200/_cluster/state?pretty=true'
+curl -XGET 'http://172.17.0.4:9200/_cluster/state?pretty=true'
+
+
+curl -XPUT 'http://172.17.0.2:9200/blogs' -d'
+{
+    "settings" : {
+        "number_of_shards" : 3,
+        "number_of_replicas" : 1
+    }
+}'

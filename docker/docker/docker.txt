@@ -21,3 +21,10 @@ wordpress:latest
 #jupyter
 docker run --name notebook -d -P -v /c/Users/T162880/Documents/Programs/python-notebook:/notebooks jupyter/notebook jupyter-notebook
 docker run -it jupyter/notebook /bin/bash
+
+#elasticsearch2
+docker run -d -P --name elasticsearch2 --link elasticsearch:elasticsearch elasticsearch:latest
+
+#kibana
+#run elasticsearch first
+docker run -d -P --name kibana --link elasticsearch:elasticsearch kibana:latest

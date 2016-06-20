@@ -1,0 +1,947 @@
+docker@default:~$ curl -XGET 'http://172.17.0.2:9200/_cluster/state?pretty=true'
+{
+    "cluster_name" : "elasticsearch",
+    "version" : 12,
+    "state_uuid" : "_k6aUq06Tq-Cy7FOgSPKsg",
+    "master_node" : "A15cfnwzSASWsR9WGF5Ssg",
+    "blocks" : { },
+    "nodes" : {
+        "A15cfnwzSASWsR9WGF5Ssg" : {
+            "name" : "Mikula Golubev",
+            "transport_address" : "172.17.0.2:9300",
+            "attributes" : { }
+        }
+    },
+    "metadata" : {
+        "cluster_uuid" : "Roya8DlERUCM_8PAUQzDrA",
+        "templates" : { },
+        "indices" : {
+            ".kibana" : {
+                "state" : "open",
+                "settings" : {
+                    "index" : {
+                        "creation_date" : "1466432659511",
+                        "number_of_shards" : "1",
+                        "number_of_replicas" : "1",
+                        "uuid" : "qEvYbNYrRRCycdvDZEoOPA",
+                        "version" : {
+                            "created" : "2030399"
+                        }
+                    }
+                },
+                "mappings" : {
+                    "config" : {
+                        "properties" : {
+                            "buildNum" : {
+                                "index" : "not_analyzed",
+                                "type" : "string"
+                            },
+                            "defaultIndex" : {
+                                "type" : "string"
+                            }
+                        }
+                    },
+                    "dashboard" : {
+                        "properties" : {
+                            "hits" : {
+                                "type" : "integer"
+                            },
+                            "timeFrom" : {
+                                "type" : "string"
+                            },
+                            "timeTo" : {
+                                "type" : "string"
+                            },
+                            "description" : {
+                                "type" : "string"
+                            },
+                            "uiStateJSON" : {
+                                "type" : "string"
+                            },
+                            "timeRestore" : {
+                                "type" : "boolean"
+                            },
+                            "title" : {
+                                "type" : "string"
+                            },
+                            "version" : {
+                                "type" : "integer"
+                            },
+                            "kibanaSavedObjectMeta" : {
+                                "properties" : {
+                                    "searchSourceJSON" : {
+                                        "type" : "string"
+                                    }
+                                }
+                            },
+                            "optionsJSON" : {
+                                "type" : "string"
+                            },
+                            "panelsJSON" : {
+                                "type" : "string"
+                            }
+                        }
+                    },
+                    "visualization" : {
+                        "properties" : {
+                            "savedSearchId" : {
+                                "type" : "string"
+                            },
+                            "description" : {
+                                "type" : "string"
+                            },
+                            "uiStateJSON" : {
+                                "type" : "string"
+                            },
+                            "title" : {
+                                "type" : "string"
+                            },
+                            "version" : {
+                                "type" : "integer"
+                            },
+                            "kibanaSavedObjectMeta" : {
+                                "properties" : {
+                                    "searchSourceJSON" : {
+                                        "type" : "string"
+                                    }
+                                }
+                            },
+                            "visState" : {
+                                "type" : "string"
+                            }
+                        }
+                    },
+                    "index-pattern" : {
+                        "properties" : {
+                            "notExpandable" : {
+                                "type" : "boolean"
+                            },
+                            "fieldFormatMap" : {
+                                "type" : "string"
+                            },
+                            "timeFieldName" : {
+                                "type" : "string"
+                            },
+                            "intervalName" : {
+                                "type" : "string"
+                            },
+                            "fields" : {
+                                "type" : "string"
+                            },
+                            "title" : {
+                                "type" : "string"
+                            }
+                        }
+                    },
+                    "search" : {
+                        "properties" : {
+                            "hits" : {
+                                "type" : "integer"
+                            },
+                            "columns" : {
+                                "type" : "string"
+                            },
+                            "description" : {
+                                "type" : "string"
+                            },
+                            "sort" : {
+                                "type" : "string"
+                            },
+                            "title" : {
+                                "type" : "string"
+                            },
+                            "version" : {
+                                "type" : "integer"
+                            },
+                            "kibanaSavedObjectMeta" : {
+                                "properties" : {
+                                    "searchSourceJSON" : {
+                                        "type" : "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "aliases" : [ ]
+            },
+            "blogs" : {
+                "state" : "open",
+                "settings" : {
+                    "index" : {
+                        "creation_date" : "1466454140959",
+                        "number_of_shards" : "3",
+                        "number_of_replicas" : "1",
+                        "uuid" : "LAUAJttTTi6f2pwY7uB8gw",
+                        "version" : {
+                            "created" : "2030399"
+                        }
+                    }
+                },
+                "mappings" : { },
+                "aliases" : [ ]
+            },
+            "blog" : {
+                "state" : "open",
+                "settings" : {
+                    "index" : {
+                        "creation_date" : "1466396902353",
+                        "number_of_shards" : "5",
+                        "number_of_replicas" : "1",
+                        "uuid" : "QxebG_8HTeiLZVc-b0GxlQ",
+                        "version" : {
+                            "created" : "2030399"
+                        }
+                    }
+                },
+                "mappings" : {
+                    "user" : {
+                        "properties" : {
+                            "name" : {
+                                "type" : "string"
+                            }
+                        }
+                    },
+                    "post" : {
+                        "properties" : {
+                            "postDate" : {
+                                "format" : "strict_date_optional_time||epoch_millis",
+                                "type" : "date"
+                            },
+                            "body" : {
+                                "type" : "string"
+                            },
+                            "title" : {
+                                "type" : "string"
+                            },
+                            "user" : {
+                                "type" : "string"
+                            }
+                        }
+                    }
+                },
+                "aliases" : [ ]
+            },
+            "megacorp" : {
+                "state" : "open",
+                "settings" : {
+                    "index" : {
+                        "creation_date" : "1466438076065",
+                        "number_of_shards" : "5",
+                        "number_of_replicas" : "1",
+                        "uuid" : "beMODBdPSRa9lANgZLdB5A",
+                        "version" : {
+                            "created" : "2030399"
+                        }
+                    }
+                },
+                "mappings" : {
+                    "employee" : {
+                        "properties" : {
+                            "about" : {
+                                "type" : "string"
+                            },
+                            "last_name" : {
+                                "type" : "string"
+                            },
+                            "interests" : {
+                                "type" : "string"
+                            },
+                            "first_name" : {
+                                "type" : "string"
+                            },
+                            "age" : {
+                                "type" : "long"
+                            }
+                        }
+                    }
+                },
+                "aliases" : [ ]
+            }
+        }
+    },
+    "routing_table" : {
+        "indices" : {
+            "megacorp" : {
+                "shards" : {
+                    "1" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 1,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "allocation_id" : {
+                            "id" : "SKW6qIN8RWezgQiFS9uH_Q"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 1,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "4" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 4,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "allocation_id" : {
+                            "id" : "wptvKHkYTI-dTyQ-mIpDiQ"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 4,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "2" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 2,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "allocation_id" : {
+                            "id" : "u-2YWPVRTquGkGyDf-ABeg"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 2,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "3" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 3,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "allocation_id" : {
+                            "id" : "B-DkuLjeTfqU3sa3UvEAkg"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 3,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "0" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "allocation_id" : {
+                            "id" : "gf1ku2uHRqCfo3xt5Yt0RQ"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : "megacorp",
+                        "version" : 4,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ]
+                }
+            },
+            ".kibana" : {
+                "shards" : {
+                    "0" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : ".kibana",
+                        "version" : 4,
+                        "allocation_id" : {
+                            "id" : "EXUIUD0xQs2b51KT3nIyMw"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : ".kibana",
+                        "version" : 4,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.001Z"
+                        }
+                    } ]
+                }
+            },
+            "blogs" : {
+                "shards" : {
+                    "1" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 1,
+                        "index" : "blogs",
+                        "version" : 2,
+                        "allocation_id" : {
+                            "id" : "agQ89h2qQ1GZc7SBXmMq9Q"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 1,
+                        "index" : "blogs",
+                        "version" : 2,
+                        "unassigned_info" : {
+                            "reason" : "INDEX_CREATED",
+                            "at" : "2016-06-20T20:22:20.997Z"
+                        }
+                    } ],
+                    "2" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 2,
+                        "index" : "blogs",
+                        "version" : 2,
+                        "allocation_id" : {
+                            "id" : "aKom2o27QzaAZzlGVWX6kw"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 2,
+                        "index" : "blogs",
+                        "version" : 2,
+                        "unassigned_info" : {
+                            "reason" : "INDEX_CREATED",
+                            "at" : "2016-06-20T20:22:20.997Z"
+                        }
+                    } ],
+                    "0" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : "blogs",
+                        "version" : 2,
+                        "allocation_id" : {
+                            "id" : "9wnb1_RFR9CHs4rUrsdBtw"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : "blogs",
+                        "version" : 2,
+                        "unassigned_info" : {
+                            "reason" : "INDEX_CREATED",
+                            "at" : "2016-06-20T20:22:20.997Z"
+                        }
+                    } ]
+                }
+            },
+            "blog" : {
+                "shards" : {
+                    "1" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 1,
+                        "index" : "blog",
+                        "version" : 6,
+                        "allocation_id" : {
+                            "id" : "Mtg89-SMT9GcK-z0V9dqMA"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 1,
+                        "index" : "blog",
+                        "version" : 6,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "4" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 4,
+                        "index" : "blog",
+                        "version" : 6,
+                        "allocation_id" : {
+                            "id" : "eAsuqKGnQKm88axaESEywA"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 4,
+                        "index" : "blog",
+                        "version" : 6,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "2" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 2,
+                        "index" : "blog",
+                        "version" : 6,
+                        "allocation_id" : {
+                            "id" : "wO4kwNjsRxGma67-Z3ctRw"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 2,
+                        "index" : "blog",
+                        "version" : 6,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "3" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 3,
+                        "index" : "blog",
+                        "version" : 6,
+                        "allocation_id" : {
+                            "id" : "07j-kO_URR2FYxSJkZn5Mw"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 3,
+                        "index" : "blog",
+                        "version" : 6,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ],
+                    "0" : [ {
+                        "state" : "STARTED",
+                        "primary" : true,
+                        "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : "blog",
+                        "version" : 6,
+                        "allocation_id" : {
+                            "id" : "UHfGW9NtQT2ls2oCNy3Ihg"
+                        }
+                    }, {
+                        "state" : "UNASSIGNED",
+                        "primary" : false,
+                        "node" : null,
+                        "relocating_node" : null,
+                        "shard" : 0,
+                        "index" : "blog",
+                        "version" : 6,
+                        "unassigned_info" : {
+                            "reason" : "CLUSTER_RECOVERED",
+                            "at" : "2016-06-20T19:22:08.006Z"
+                        }
+                    } ]
+                }
+            }
+        }
+    },
+    "routing_nodes" : {
+        "unassigned" : [ {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 1,
+            "index" : "megacorp",
+            "version" : 4,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 4,
+            "index" : "megacorp",
+            "version" : 4,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 2,
+            "index" : "megacorp",
+            "version" : 4,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 3,
+            "index" : "megacorp",
+            "version" : 4,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 0,
+            "index" : "megacorp",
+            "version" : 4,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 0,
+            "index" : ".kibana",
+            "version" : 4,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.001Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 1,
+            "index" : "blogs",
+            "version" : 2,
+            "unassigned_info" : {
+                "reason" : "INDEX_CREATED",
+                "at" : "2016-06-20T20:22:20.997Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 2,
+            "index" : "blogs",
+            "version" : 2,
+            "unassigned_info" : {
+                "reason" : "INDEX_CREATED",
+                "at" : "2016-06-20T20:22:20.997Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 0,
+            "index" : "blogs",
+            "version" : 2,
+            "unassigned_info" : {
+                "reason" : "INDEX_CREATED",
+                "at" : "2016-06-20T20:22:20.997Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 1,
+            "index" : "blog",
+            "version" : 6,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 4,
+            "index" : "blog",
+            "version" : 6,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 2,
+            "index" : "blog",
+            "version" : 6,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 3,
+            "index" : "blog",
+            "version" : 6,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 0,
+            "index" : "blog",
+            "version" : 6,
+            "unassigned_info" : {
+                "reason" : "CLUSTER_RECOVERED",
+                "at" : "2016-06-20T19:22:08.006Z"
+            }
+        } ],
+        "nodes" : {
+            "A15cfnwzSASWsR9WGF5Ssg" : [ {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 1,
+                "index" : "megacorp",
+                "version" : 4,
+                "allocation_id" : {
+                    "id" : "SKW6qIN8RWezgQiFS9uH_Q"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 4,
+                "index" : "megacorp",
+                "version" : 4,
+                "allocation_id" : {
+                    "id" : "wptvKHkYTI-dTyQ-mIpDiQ"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 2,
+                "index" : "megacorp",
+                "version" : 4,
+                "allocation_id" : {
+                    "id" : "u-2YWPVRTquGkGyDf-ABeg"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 3,
+                "index" : "megacorp",
+                "version" : 4,
+                "allocation_id" : {
+                    "id" : "B-DkuLjeTfqU3sa3UvEAkg"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 0,
+                "index" : "megacorp",
+                "version" : 4,
+                "allocation_id" : {
+                    "id" : "gf1ku2uHRqCfo3xt5Yt0RQ"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 0,
+                "index" : ".kibana",
+                "version" : 4,
+                "allocation_id" : {
+                    "id" : "EXUIUD0xQs2b51KT3nIyMw"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 1,
+                "index" : "blogs",
+                "version" : 2,
+                "allocation_id" : {
+                    "id" : "agQ89h2qQ1GZc7SBXmMq9Q"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 2,
+                "index" : "blogs",
+                "version" : 2,
+                "allocation_id" : {
+                    "id" : "aKom2o27QzaAZzlGVWX6kw"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 0,
+                "index" : "blogs",
+                "version" : 2,
+                "allocation_id" : {
+                    "id" : "9wnb1_RFR9CHs4rUrsdBtw"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 1,
+                "index" : "blog",
+                "version" : 6,
+                "allocation_id" : {
+                    "id" : "Mtg89-SMT9GcK-z0V9dqMA"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 4,
+                "index" : "blog",
+                "version" : 6,
+                "allocation_id" : {
+                    "id" : "eAsuqKGnQKm88axaESEywA"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 2,
+                "index" : "blog",
+                "version" : 6,
+                "allocation_id" : {
+                    "id" : "wO4kwNjsRxGma67-Z3ctRw"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 3,
+                "index" : "blog",
+                "version" : 6,
+                "allocation_id" : {
+                    "id" : "07j-kO_URR2FYxSJkZn5Mw"
+                }
+            }, {
+                "state" : "STARTED",
+                "primary" : true,
+                "node" : "A15cfnwzSASWsR9WGF5Ssg",
+                "relocating_node" : null,
+                "shard" : 0,
+                "index" : "blog",
+                "version" : 6,
+                "allocation_id" : {
+                    "id" : "UHfGW9NtQT2ls2oCNy3Ihg"
+                }
+            } ]
+        }
+    }
+}

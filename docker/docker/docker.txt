@@ -1,5 +1,6 @@
 #mysql
-docker run --name mysql -d -P -e MYSQL_ROOT_PASSWORD=12345678 -v /c/Users/T162880/Documents/Programs/mysql:/var/lib/mysql mysql:latest
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -v /c/Users/T162880/Documents/Programs/mysql:/var/lib/mysql mysql:latest
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 mysql:latest
 docker exec -it mysql mysql -u root -p
 docker exec -it mysql /bin/bash
 

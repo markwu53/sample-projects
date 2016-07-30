@@ -1,5 +1,8 @@
 #mysql
 docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -v /c/Users/T162880/Documents/Programs/mysql:/var/lib/mysql mysql:latest
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -v /tmp/mysql:/var/lib/mysql mysql:latest
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -v /var/lib/mysql:/var/lib/mysql mysql:latest
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -v /Users/apple/Documents/Programs/mysql:/var/lib/mysql mysql:latest
 docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 mysql:latest
 docker exec -it mysql mysql -u root -p
 docker exec -it mysql /bin/bash
@@ -12,6 +15,7 @@ docker run -d -e DISPLAY=10.101.7.146:0.0 -v /c/Users/T162880/Documents/Programs
 
 #wordpress
 docker run -d -p 8082:80 --name wordpress --link mysql:mysql -v /c/Users/T162880/Documents/Programs/wordpress/html:/var/www/html -e WORDPRESS_DB_PASSWORD=12345678 wordpress:latest
+docker run -d -p 8082:80 --name wordpress --link mysql:mysql -e WORDPRESS_DB_PASSWORD=12345678 wordpress:latest
 docker run -d -p 8082:80 --name wordpress \
 -v /c/Users/T162880/Documents/Programs/wordpress/html:/var/www/html \
 -e WORDPRESS_DB_HOST=172.17.0.2 \
@@ -29,3 +33,7 @@ docker run -d -P --name elasticsearch2 --link elasticsearch:elasticsearch elasti
 #kibana
 #run elasticsearch first
 docker run -d -P --name kibana --link elasticsearch:elasticsearch kibana:latest
+
+#sqlserver
+docker run -it --name windows sqlserver:my cmd
+docker run -p 1433:1433 --name sqlserver --env sa_password=12345678 microsoft/mssql-server-2014-express-windows

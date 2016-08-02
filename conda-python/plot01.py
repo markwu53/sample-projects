@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.style.use("ggplot")
 # Data to be represented
 X = np.random.randn(256)
 

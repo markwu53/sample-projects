@@ -1,0 +1,27 @@
+import pandas
+
+data = pandas.DataFrame([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+data.columns = ["A", "B", "C", "D"]
+data.index = ["A", "B", "C", "D"]
+print(data)
+#data = data[[1,3]]; print(data)
+#data = data[["B","D"]]; print(data)
+print(type(data.ix))
+print(data.ix)
+#data = data.ix[1,3]; print(data)
+#data = data.ix["B","D"]; print(data)
+ii = pandas.Series(["B", "D"]); print(ii)
+#data = data[ii]; print(data)
+#data = data.ix[ii]; print(data)
+print(data.loc)
+print(data.loc[ii])
+print(data.loc["B", "C"])
+print(data.iloc)
+print(data.iloc[1])
+print(data.iloc[1,2])
+print(data.ix[1,2])
+print(data.at)
+#print(data.at["B", "C"])
+#print(data.ix["B", "C"])
+#print(data.ix["B"])
+print(data.iat)

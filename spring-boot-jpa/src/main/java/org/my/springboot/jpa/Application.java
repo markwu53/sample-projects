@@ -1,7 +1,5 @@
 package org.my.springboot.jpa;
 
-import java.text.SimpleDateFormat;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    //private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-    @Autowired
-    private CustomerRepository customerRepository;
+    @Autowired private CustomerRepository customerRepository;
+    @Autowired private CityRepository cityRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -32,9 +30,9 @@ public class Application implements CommandLineRunner {
             System.out.println(customer);
         }
 
-        System.out.println("\n3.findByDate(Date date)...");
-        for (Customer customer : customerRepository.findByDate(sdf.parse("2017-02-12"))) {
-            System.out.println(customer);
+        System.out.println("\n3.findByCity(String city)...");
+        for (City city : cityRepository.findByCity("ALBION")) {
+            System.out.println(String.format("%s - %s: %.2f", city.getCity(), city.getId().getInsuredName(), city.getPremium()));
         }
 
         System.out.println("done");

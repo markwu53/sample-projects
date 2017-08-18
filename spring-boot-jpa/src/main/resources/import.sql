@@ -1,6 +1,6 @@
-INSERT INTO "CUSTOMER" (NAME, EMAIL, CREATED_DATE) VALUES('mkyong','111@yahoo.com', '2017-02-11 00:00:00');
-INSERT INTO "CUSTOMER" (NAME, EMAIL, CREATED_DATE) VALUES('yflow','222@yahoo.com', '2017-02-12 00:00:00');
-INSERT INTO "CUSTOMER" (NAME, EMAIL, CREATED_DATE) VALUES('zilap','333@yahoo.com', '2017-02-13 00:00:00');
-INSERT INTO "CUSTOMER" (NAME, EMAIL, CREATED_DATE) VALUES('markwu','333@yahoo.com', '2017-02-13 00:00:00');
-INSERT INTO "CUSTOMER" (NAME, EMAIL, CREATED_DATE) VALUES('steven','333@yahoo.com', '2017-02-13 00:00:00');
-INSERT INTO "CUSTOMER" (NAME, EMAIL, CREATED_DATE) VALUES('richard','333@yahoo.com', '2017-02-13 00:00:00');
+--insert into "customer2" (name, email, created_date) values('MKYONG','111@YAHOO.COM', '2017-02-11 00:00:00');
+--insert into "customer2" (name, email, created_date) values('YFLOW','222@YAHOO.COM', '2017-02-12 00:00:00');
+--insert into "customer2" (name, email, created_date) values('ZILAP','333@YAHOO.COM', '2017-02-13 00:00:00');
+--insert into "customer2" (name, email, created_date) values('MARKWU','333@YAHOO.COM', '2017-02-13 00:00:00');
+--insert into "customer2" (name, email, created_date) values('STEVEN','333@YAHOO.COM', '2017-02-13 00:00:00');
+--insert into "customer2" (name, email, created_date) values('RICHARD','333@YAHOO.COM', '2017-02-13 00:00:00');

@@ -16,7 +16,7 @@ public class City {
     @Column
     private String city;
 
-    @Column(name = "client_state")
+    @Column
     private String clientState;
 
     @Column(precision = 12, scale = 2)
@@ -61,7 +61,10 @@ class CityId implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
+    @Column
     private String renewalDate;
+    
+    @Column
     private String insuredName;
 
     public String getRenewalDate() {

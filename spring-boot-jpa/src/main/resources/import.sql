@@ -1,6 +1,2 @@
---insert into "customer2" (name, email, created_date) values('MKYONG','111@YAHOO.COM', '2017-02-11 00:00:00');
---insert into "customer2" (name, email, created_date) values('YFLOW','222@YAHOO.COM', '2017-02-12 00:00:00');
---insert into "customer2" (name, email, created_date) values('ZILAP','333@YAHOO.COM', '2017-02-13 00:00:00');
---insert into "customer2" (name, email, created_date) values('MARKWU','333@YAHOO.COM', '2017-02-13 00:00:00');
---insert into "customer2" (name, email, created_date) values('STEVEN','333@YAHOO.COM', '2017-02-13 00:00:00');
---insert into "customer2" (name, email, created_date) values('RICHARD','333@YAHOO.COM', '2017-02-13 00:00:00');
+insert into customer2 (name, email, created_date) values ('richard','333@yahoo.com', '2017-02-13 00:00:00');
+insert into big_city (renewal_date, insured_name, city, client_state, premium) values ('2017-08-18', 'Mark Wu', 'Columbus', 'OH', 25.23);

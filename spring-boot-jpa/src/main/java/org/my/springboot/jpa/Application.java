@@ -31,7 +31,7 @@ public class Application implements CommandLineRunner {
         }
 
         System.out.println("\n3.findByCity(String city)...");
-        for (City city : cityRepository.findByCity("ALBION")) {
+        for (City city : cityRepository.findByCity("Columbus")) {
             System.out.println(String.format("%s - %s: %.2f", city.getCity(), city.getId().getInsuredName(), city.getPremium()));
         }
 

@@ -20,7 +20,7 @@ public class City {
     private String clientState;
 
     @Column(precision = 12, scale = 2)
-    private double premium;
+    private Double premium;
 
     public CityId getId() {
         return id;
@@ -46,11 +46,11 @@ public class City {
         this.clientState = clientState;
     }
 
-    public double getPremium() {
+    public Double getPremium() {
         return premium;
     }
 
-    public void setPremium(double premium) {
+    public void setPremium(Double premium) {
         this.premium = premium;
     }
 

@@ -67,6 +67,17 @@ class CityId implements Serializable {
     @Column
     private String insuredName;
 
+    @Override
+    public boolean equals(Object arg0) {
+        return this.renewalDate.equals(((CityId) arg0).renewalDate)
+            && this.insuredName.equalsIgnoreCase(((CityId) arg0).insuredName);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     public String getRenewalDate() {
         return renewalDate;
     }

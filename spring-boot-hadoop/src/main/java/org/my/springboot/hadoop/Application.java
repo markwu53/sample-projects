@@ -1,6 +1,8 @@
 package org.my.springboot.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -29,13 +31,20 @@ public class Application implements CommandLineRunner {
                 System.out.println(String.format("%s: %s", ss[0], ss[1]));
             });
             //.collect(Collectors.toList());
-             */
         shell.ls("/user").stream()
             .map(s -> s.getPath().getName())
             .forEach(System.out::println);
         hadoop.forEach(e -> {
             System.out.println(String.format("%s=%s", e.getKey(), e.getValue()));
         });
+        */
+        shell.ls("/user").stream()
+            .map(FileStatus::getPath)
+            .map(Path::getName)
+            .filter(s -> s.startsWith("T"))
+            .map(s -> s.substring(1))
+            .map(Integer::valueOf)
+            .forEach(System.out::println);
     }
 
     /*

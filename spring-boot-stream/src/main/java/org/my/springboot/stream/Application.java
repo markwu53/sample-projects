@@ -40,7 +40,10 @@ public class Application implements CommandLineRunner {
     public void showBeans() {
         //Map<String, String> m = new TreeMap<String, String>();
         Arrays.stream(context.getBeanDefinitionNames())
-            .filter(s -> !s.startsWith("org."))
+            //.filter(((Predicate<String>)s -> s.startsWith("org.")).negate())
+            //.filter(s -> ((Function<String, Boolean>)s::startsWith).andThen(b -> !b).apply("org."))
+            .filter(s -> ((Function<Boolean, Boolean>) b -> !b).compose((Function<String, Boolean>)s::startsWith).apply("org."))
+            //.filter(s -> !s.startsWith("org."))
             .filter(s -> !s.startsWith("spring."))
             //.collect(TreeMap<String, String>::new, (t, s) -> t.put(context.getBean(s).getClass().getName(), s), (a, b) -> a.putAll(b))
             //.collect(TreeMap<String, String>::new, (BiConsumer<TreeMap<String, String>, String>) this::myConsumer, (a, b) -> a.putAll(b))

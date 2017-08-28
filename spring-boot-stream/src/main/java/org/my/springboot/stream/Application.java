@@ -41,8 +41,9 @@ public class Application implements CommandLineRunner {
         //Map<String, String> m = new TreeMap<String, String>();
         Arrays.stream(context.getBeanDefinitionNames())
             //.filter(((Predicate<String>)s -> s.startsWith("org.")).negate())
-            .filter(s -> ((Function<String, Boolean>)s::startsWith).andThen((Function<Boolean, Boolean>)b -> !b).apply("org."))
+            //.filter(s -> ((Function<String, Boolean>)s::startsWith).andThen((Function<Boolean, Boolean>)b -> !b).apply("org."))
             //.filter(s -> ((Function<Boolean, Boolean>) b -> !b).compose((Function<String, Boolean>)s::startsWith).apply("org."))
+            .filter(s -> ((Function<Boolean, Boolean>) b -> !b).apply(((Function<String, Boolean>)s::startsWith).apply("org.")))
             //.filter(s -> !s.startsWith("org."))
             .filter(s -> !s.startsWith("spring."))
             //.collect(TreeMap<String, String>::new, (t, s) -> t.put(context.getBean(s).getClass().getName(), s), (a, b) -> a.putAll(b))

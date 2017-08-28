@@ -19,35 +19,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-class A {
-    public void show() {
-        System.out.println("in A");
-    }
-}
-
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-
-    {
-        System.out.println("init main application");
-    }
 
     @Autowired ApplicationContext context;
  
     public static void main(String[] args) {
-        new Application() {{
-            System.out.println("init inside application");
-        }};
-        new A() {
-
-            {
-                System.out.println("init...");
-                show();
-                show();
-                System.out.println("init done");
-            }
-            
-        }.show();
         SpringApplication.run(Application.class, args);
     }
 

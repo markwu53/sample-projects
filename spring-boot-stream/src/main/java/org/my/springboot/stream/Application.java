@@ -50,6 +50,16 @@ public class Application implements CommandLineRunner {
             //.collect(TreeMap<String, String>::new, (BiConsumer<TreeMap<String, String>, String>) this::myConsumer, (a, b) -> a.putAll(b))
             //.collect(TreeMap<String, String>::new, this::myConsumer, (a, b) -> a.putAll(b))
             .collect(TreeMap<String, String>::new,
+                    (t, s) -> (
+                            (Function<String, Function<String, String>>)
+                            s1 -> s2 -> t.put(s1,  s2))
+                            .compose((Function<Class<?>, String>) Class::getName)
+                            .compose((Function<Object, Class<?>>) Object::getClass)
+                            .compose((Function<String, Object>) context::getBean)
+                    .apply(s).apply(s),
+                    (a, b) -> a.putAll(b))
+            /*
+            .collect(TreeMap<String, String>::new,
                     (a, b) -> (
                             (Function<String, Function<String, Function<TreeMap<String, String>, String>>>)
                             s1 -> s2 -> t -> t.put(s1, s2))
@@ -58,7 +68,6 @@ public class Application implements CommandLineRunner {
                             .compose((Function<String, Object>) context::getBean)
                     .apply(b).apply(b).apply(a),
                     (a, b) -> a.putAll(b))
-            /*
             .collect(TreeMap<String, String>::new, 
                     (t, s) -> ((BiFunction<String, String, String>)t::put).apply(((Function<String, Object>)context::getBean)
                             .andThen((Function<Object, Class<?>>) Object::getClass)

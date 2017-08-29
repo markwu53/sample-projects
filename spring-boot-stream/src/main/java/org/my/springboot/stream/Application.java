@@ -26,7 +26,7 @@ public class Application implements CommandLineRunner {
     @Autowired ApplicationContext context;
  
     public static void main(String[] args) {
-        System.out.println("repo 1");
+        System.out.println("repo 2");
         SpringApplication.run(Application.class, args);
     }
 

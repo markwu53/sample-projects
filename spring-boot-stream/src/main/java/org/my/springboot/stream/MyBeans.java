@@ -11,6 +11,7 @@ public class MyBeans {
 
     @Bean
     public String myAnotherBean() {
+        System.out.println("init myAnotherBean");
         String message = app.getClass().getName();
         //return "My another bean";
         return message;

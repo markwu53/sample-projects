@@ -6,6 +6,7 @@ docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -v /User
 docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 mysql:latest
 docker exec -it mysql mysql -u root -p
 docker exec -it mysql /bin/bash
+docker stop mysql
 
 #firefox
 docker run -d -e DISPLAY=10.101.7.146:0.0 --name ubuntu-firefox markwu53/ubuntu:firefox firefox

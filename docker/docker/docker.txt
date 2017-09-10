@@ -20,6 +20,9 @@ docker run --name tomcat -d -p 18888:8080 tomcat
 #glcassfish
 docker run --name glassfish -d -p 28888:8080 glassfish
 
+#sqlserver linux
+docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=Discover30@ -p 1433:1433 -d microsoft/mssql-server-linux
+
 #firefox
 docker run -d -e DISPLAY=10.101.7.146:0.0 --name ubuntu-firefox markwu53/ubuntu:firefox firefox
 

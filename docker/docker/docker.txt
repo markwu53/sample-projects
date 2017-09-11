@@ -53,3 +53,7 @@ docker run -d -P --name kibana --link elasticsearch:elasticsearch kibana:latest
 #sqlserver
 docker run -it --name windows sqlserver:my cmd
 docker run -p 1433:1433 --name sqlserver --env sa_password=12345678 microsoft/mssql-server-2014-express-windows
+
+#certificate
+create own certificate and trust it
+https://docs.docker.com/registry/insecure/#troubleshoot-insecure-registry

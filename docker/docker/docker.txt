@@ -57,3 +57,5 @@ docker run -p 1433:1433 --name sqlserver --env sa_password=12345678 microsoft/ms
 #certificate
 create own certificate and trust it
 https://docs.docker.com/registry/insecure/#troubleshoot-insecure-registry
+
+docker-machine.exe -D create -d virtualbox --virtualbox-memory 2048 default

@@ -8,6 +8,23 @@ docker exec -it mysql mysql -u root -p
 docker exec -it mysql /bin/bash
 docker stop mysql
 
+#docker mysql 5.8 has problem with JDBC authenticaion
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -v /home/mark/docker/mysql/data:/var/lib/mysql mysql:5.7
+
+show tables;
+select * from user;
+grant all privileges on *.* to 'dbuser'@'localhost' identified by '12345678';
+grant all privileges on *.* to 'dbuser'@'%' identified by '12345678';
+show databases;
+create database mydb;
+use mydb;
+show tables;
+create table mydb.people (first_name varchar(100), last_name varchar(100), age int);
+insert into mydb.people values ('Mark', 'Wu', 48);
+select * from mydb.people;
+
+
+
 #postgres
 docker run --name postgres -d -p 5432:5432 -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=12345678 -v /var/lib/postgresql/data:/var/lib/postgresql/data postgres
 

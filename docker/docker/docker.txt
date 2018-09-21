@@ -23,7 +23,8 @@ create table mydb.people (first_name varchar(100), last_name varchar(100), age i
 insert into mydb.people values ('Mark', 'Wu', 48);
 select * from mydb.people;
 
-
+#tomcat
+docker run -d --name tomcat -p 8080:8080 -v /home/mark/Shared/docker/tomcat/webapps:/usr/local/tomcat/webapps tomcat:latest
 
 #postgres
 docker run --name postgres -d -p 5432:5432 -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=12345678 -v /var/lib/postgresql/data:/var/lib/postgresql/data postgres

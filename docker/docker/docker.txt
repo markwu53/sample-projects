@@ -23,6 +23,9 @@ create table mydb.people (first_name varchar(100), last_name varchar(100), age i
 insert into mydb.people values ('Mark', 'Wu', 48);
 select * from mydb.people;
 
+#adminer + mysql
+docker run --link mysql:db -p 9090:8080 -d --name adminer adminer:latest
+
 #tomcat
 docker run -d --name tomcat -p 8080:8080 -v /home/mark/Shared/docker/tomcat/webapps:/usr/local/tomcat/webapps tomcat:latest
 

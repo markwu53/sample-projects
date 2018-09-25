@@ -26,6 +26,12 @@ select * from mydb.people;
 #adminer + mysql
 docker run --link mysql:db -p 9090:8080 -d --name adminer adminer:latest
 
+#flask
+docker run -d --name flask -p 5000:5000 -v /home/mark/Shared/docker/flask:/root python:flask sh -c /root/flask_start.sh
+cat flask_start.sh
+export FLASK_APP=/root/flask_entry.py
+flask run --host=0.0.0.0
+
 #tomcat
 docker run -d --name tomcat -p 8080:8080 -v /home/mark/Shared/docker/tomcat/webapps:/usr/local/tomcat/webapps tomcat:latest
 
